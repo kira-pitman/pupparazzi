@@ -13,7 +13,7 @@ When complete, your application might look like this:
 ## Setup
 
 ### 0. Cloning and installation
-- [ ] After cloning this repo, install dependencies with `npm install`, and start the dev server with `npm run dev`
+- [X] After cloning this repo, install dependencies with `npm install`, and start the dev server with `npm run dev`
   <details style="padding-left: 2em">
     <summary>More about getting started</summary>
 
@@ -40,7 +40,7 @@ When complete, your application might look like this:
 ## Requirements
 
 ### 1. Server setup
-- [ ] Let's get our server running with a default route
+- [X] Let's get our server running with a default route
   <details style="padding-left: 2em">
     <summary>More about the server</summary>
 
@@ -52,7 +52,7 @@ When complete, your application might look like this:
 
 ### 2. Displaying puppies on the root route
 
-- [ ] As a user, I want to see some puppies, so that I can say "awwww"
+- [X] As a user, I want to see some puppies, so that I can say "awwww"
   <details style="padding-left: 2em">
     <summary>More about displaying puppies</summary>
 
@@ -74,7 +74,7 @@ When complete, your application might look like this:
 
 ### 3. Displaying the detailed puppy page
 
-- [ ] As a user, I want to click on a puppy and see their name, breed, and who their owner is
+- [X] As a user, I want to click on a puppy and see their name, breed, and who their owner is
   <details style="padding-left: 2em">
     <summary>More about puppy pages</summary>
   
