@@ -4,6 +4,7 @@ import * as Path from 'node:path'
 import express from 'express'
 import hbs from 'express-handlebars'
 import fs from 'node:fs/promises'
+import puppyRoutes from './route.js'
 
 const server = express()
 
@@ -19,20 +20,17 @@ server.set('views', Path.resolve('server/views'))
 
 // Your routes/router(s) should go here
 
-// server.get('/', (req, res) => {
-//   res.send('Pupparazzi')
-// })
-
 server.get('/', async (req, res) => {
   try {
     const puppies = await fs
       .readFile(Path.resolve('server/data/data.json'), 'utf-8')
       .then((data) => JSON.parse(data))
-    console.log(puppies)
     res.render('home', puppies)
   } catch (err) {
     console.error(err.message)
   }
 })
+
+server.use('/puppies', puppyRoutes)
 
 export default server
