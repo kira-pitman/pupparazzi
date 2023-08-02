@@ -34,25 +34,41 @@ router.get('/:id/edit', async (req, res) => {
   }
 })
 
-// router.post('/:id/edit', async (req, res) => {
-//   try {
-//     const updatedPuppy = {
-//       id: id,
-//       name: req.body.name,
-//       breed: req.body.breed,
-//       owner: req.body.owner,
-//     }
+router.post('/:id/edit', async (req, res) => {
+  try {
+    let id = req.params.id
+    // const updatedPuppy = {
+    //   id: req.params.id,
+    //   name: req.body.name,
+    //   breed: req.body.breed,
+    //   owner: req.body.owner,
+    // }
 
-//     puppies.push(updatedPuppy)
+    const puppies = await fs
+      .readFile(Path.resolve('server/data/data.json'), 'utf-8')
+      .then((data) => JSON.parse(data))
 
-//     const newFileContents = JSON.stringify(puppies, null)
-//     fs.writeFile(Path.resolve('server/data/data.json'), newFileContents)
+     puppies.puppies.map((puppy) => {
+      if (puppy.id === Number (id)) {
+        puppy.name = req.body.name, 
+        puppy.breed = req.body.breed
+        puppy.owner = req.body.owner
+      }
+    })
+    // so for every puppy want to check if puppy.id === id
+    // map over puppies
+    // in that check if the puppies.id is the same as above let id
+    // so if ids match then have name = req.body.name
 
-//     res.redirect('/:id')
-//     res.render('edit', puppy)
-//   } catch (err) {
-//     console.error(err.message)
-//   }
-// })
+    console.log(puppies)
+
+    const newFileContents = JSON.stringify(puppies, null, 2)
+    fs.writeFile(Path.resolve('server/data/data.json'), newFileContents)
+
+    res.redirect(`/puppies/${id}`) // yikes help
+  } catch (err) {
+    console.error(err.message)
+  }
+})
 
 export default router
