@@ -41,8 +41,8 @@ router.post('/:id/edit', async (req, res) => {
 
     puppies.puppies.map((puppy) => {
       if (puppy.id === Number(id)) {
-        (puppy.name = req.body.name)
-        (puppy.breed = req.body.breed)
+        puppy.name = req.body.name
+        puppy.breed = req.body.breed
         puppy.owner = req.body.owner
       }
     })
