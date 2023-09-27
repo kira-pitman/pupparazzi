@@ -1,8 +1,8 @@
-Challenge from week 2 of bootcamp
-
-
 # Pupparazzi
 
+A challenge during bootcamp from week 2. This challenge used javascript, express handlebars, and css. This was also my first website deployment onto dokku.
+
+# Instructions given from challenge that I worked off
 Learning objectives:
 
 1. Learn Express router
