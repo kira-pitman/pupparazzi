@@ -1,3 +1,6 @@
+Challenge from week 2 of bootcamp
+
+
 # Pupparazzi
 
 Learning objectives:
